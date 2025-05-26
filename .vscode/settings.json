@@ -1,0 +1,11 @@
+{
+  "cSpell.language": "en,es",
+  "runOnSave.commands": [
+    {
+      "globMatch": "**/locales/**/*.json",
+      "command": "npm run gen-translation-resources",
+      "runningStatusMessage": "Generating translation resources...",
+      "finishStatusMessage": "Resources generated!"
+    }
+  ]
+}
