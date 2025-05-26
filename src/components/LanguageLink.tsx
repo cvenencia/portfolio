@@ -1,8 +1,9 @@
 'use client';
 
-import { capitalize } from '@/utils/strings';
 import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
+
+import { capitalize } from '@/utils/strings';
 
 export function LanguageLink({ locale }: { locale: string }) {
   const params = useParams<{ locale: string }>();

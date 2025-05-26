@@ -1,6 +1,6 @@
-import { i18nConfig, initTranslations } from '@/i18n';
 import { LanguageLink } from '@/components/LanguageLink';
 import { ThemeButton } from '@/components/ThemeButton';
+import { i18nConfig, initTranslations } from '@/i18n';
 
 export default async function Index({
   params: paramsPromise,

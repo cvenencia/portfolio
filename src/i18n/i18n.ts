@@ -1,7 +1,7 @@
-import { Resource, createInstance, i18n } from 'i18next';
-import { initReactI18next } from 'react-i18next/initReactI18next';
+import { createInstance, i18n,Resource } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { Config } from 'next-i18n-router/dist/types';
+import { initReactI18next } from 'react-i18next/initReactI18next';
 
 export const i18nConfig: Config = {
   locales: ['en', 'es'],

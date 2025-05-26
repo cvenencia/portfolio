@@ -1,10 +1,12 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { useMounted } from '@/hooks/useMounted';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useTranslation } from 'react-i18next';
+
+import { Button } from '@/components/ui/button';
+import { useMounted } from '@/hooks/useMounted';
+
 import {
   Tooltip,
   TooltipContent,

@@ -1,12 +1,14 @@
-import { i18nConfig } from '@/i18n/i18n';
+import './globals.css';
+
+import { dir } from 'i18next';
 import type { Metadata } from 'next';
-import { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { ThemeProvider } from 'next-themes';
-import './globals.css';
+import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
-import { Inter } from 'next/font/google';
-import { dir } from 'i18next';
+
+import { i18nConfig } from '@/i18n/i18n';
 import TranslationsProvider from '@/i18n/TranslationsProvider';
 
 const inter = Inter({ subsets: ['latin'] });
