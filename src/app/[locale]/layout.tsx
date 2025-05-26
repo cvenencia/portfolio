@@ -1,10 +1,13 @@
 import { i18nConfig } from '@/i18n/i18n';
-import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
-import { dir } from 'i18next';
 import { notFound } from 'next/navigation';
+import { ThemeProvider } from 'next-themes';
+import './globals.css';
+import { Toaster } from 'sonner';
+import { Inter } from 'next/font/google';
+import { dir } from 'i18next';
+import TranslationsProvider from '@/i18n/TranslationsProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,8 +32,24 @@ export default async function RootLayout(props: {
   }
 
   return (
-    <html lang={locale} dir={dir(locale)}>
-      <body className={inter.className}>{children}</body>
+    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
+      <body className={inter.className}>
+        <TranslationsProvider namespaces={['root']}>
+          <ThemeProvider attribute='class'>
+            <div vaul-drawer-wrapper=''>
+              <div className='relative flex min-h-screen flex-col bg-background'>
+                <div>{children}</div>
+              </div>
+            </div>
+            <Toaster
+              richColors
+              duration={15000}
+              closeButton
+              position='bottom-center'
+            />
+          </ThemeProvider>
+        </TranslationsProvider>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,8 @@
 interface Resources {
-  "home": {
-    "title": "hello"
+  "root": {
+    "title": "hello",
+    "switch-light": "Switch to light mode",
+    "switch-dark": "Switch to dark mode"
   }
 }
 
