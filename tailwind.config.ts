@@ -59,6 +59,9 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      transitionTimingFunction: {
+        'in-out-custom': 'cubic-bezier(0.982, 0.157, 0.622, 0.681)',
+      },
       animation: {
         'fade-in': 'fade-in 1s ease-in-out forwards',
       },

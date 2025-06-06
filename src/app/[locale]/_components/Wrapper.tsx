@@ -2,6 +2,8 @@
 
 import { ReactNode, useState } from 'react';
 
+import { cn } from '@/lib/utils';
+
 type WrapperProps = {
   children: ReactNode;
 };
@@ -21,7 +23,10 @@ export function Wrapper({ children }: WrapperProps) {
   };
 
   return (
-    <div onAnimationEnd={onAnimationEnd} className={className}>
+    <div
+      onAnimationEnd={onAnimationEnd}
+      className={cn(className, 'delay-300 ease-in-out-custom')}
+    >
       {children}
     </div>
   );

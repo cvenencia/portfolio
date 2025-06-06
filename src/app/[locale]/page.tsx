@@ -1,7 +1,7 @@
-import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
 
-import { Wrapper } from './Wrapper';
+import { Hero } from './_components/Hero';
+import { Wrapper } from './_components/Wrapper';
 
 export default async function Index() {
   return (
