@@ -35,7 +35,7 @@ export default async function RootLayout(props: {
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
         <TranslationsProvider namespaces={['root']}>
-          <ThemeProvider attribute='class'>
+          <ThemeProvider attribute='class' disableTransitionOnChange>
             <div vaul-drawer-wrapper=''>
               <div className='relative flex min-h-screen flex-col bg-background'>
                 <div>{children}</div>
