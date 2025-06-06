@@ -1,21 +1,15 @@
-import { LanguageLink } from '@/components/LanguageLink';
-import { ThemeButton } from '@/components/ThemeButton';
-import { i18nConfig, initTranslations } from '@/i18n';
+import { Hero } from '@/components/Hero';
+import { Navbar } from '@/components/Navbar';
 
-export default async function Index({
-  params: paramsPromise,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const locale = (await paramsPromise).locale;
-  const { t } = await initTranslations(locale, ['root']);
+import { Wrapper } from './Wrapper';
+
+export default async function Index() {
   return (
-    <>
-      <h1>{t('title')}</h1>
-      <ThemeButton />
-      {i18nConfig.locales
-        .map(locale => [<LanguageLink key={locale} locale={locale} />, ' '])
-        .flat()}
-    </>
+    <Wrapper>
+      <Navbar overlay />
+      <main>
+        <Hero />
+      </main>
+    </Wrapper>
   );
 }

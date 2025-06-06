@@ -1,5 +1,17 @@
 {
-  "title": "hola",
+  "change-language": "Cambiar idioma",
   "switch-light": "Cambiar a modo claro",
-  "switch-dark": "Cambiar a modo oscuro"
+  "switch-dark": "Cambiar a modo oscuro",
+  "nav": {
+    "navigation": "Navegación",
+    "about-me": "Sobre mí",
+    "projects": "Proyectos",
+    "testimonials": "Testimonios",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "flag-alt": "Bandera de Colombia",
+    "subtitle": "<0>Desarrollador Full-Stack</0> de Colombia"
+  }
 }

@@ -1,5 +1,6 @@
 import containerQueries from '@tailwindcss/container-queries';
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 import animate from 'tailwindcss-animate';
 
 export default {
@@ -58,7 +59,26 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      animation: {
+        'fade-in': 'fade-in 1s ease-in-out forwards',
+      },
+      keyframes: {
+        'fade-in': {
+          from: {
+            opacity: '0',
+          },
+          to: {
+            opacity: '1',
+          },
+        },
+      },
     },
   },
-  plugins: [animate, containerQueries],
+  plugins: [
+    animate,
+    containerQueries,
+    plugin(({ addVariant }) =>
+      addVariant('hocus', ['&:hover', '&:focus-visible'])
+    ),
+  ],
 } satisfies Config;
