@@ -13,5 +13,9 @@
   "hero": {
     "flag-alt": "Bandera de Colombia",
     "subtitle": "<0>Desarrollador Full-Stack</0> de Colombia"
+  },
+  "about-me": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador web apasionado por la tecnología. Me gradué de Ingeniería de Sistemas en Febrero de 2023. Desde entonces he estado trabajando como Freelancer en diversos proyectos, como programas de Web Scraping de diversa complejidad y aplicaciones web."
   }
 }

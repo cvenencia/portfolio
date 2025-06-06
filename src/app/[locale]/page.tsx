@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 
+import { AboutMe } from './_components/AboutMe';
 import { Background } from './_components/Background';
 import { Hero } from './_components/Hero';
 import { Wrapper } from './_components/Wrapper';
@@ -9,8 +10,9 @@ export default async function Index() {
     <Wrapper>
       <Background />
       <Navbar overlay />
-      <main>
+      <main className='text-lg'>
         <Hero />
+        <AboutMe />
       </main>
     </Wrapper>
   );
