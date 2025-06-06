@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 export function Hero() {
   const { t } = useTranslation();
   return (
-    <section id='hero' className='h-screen grid place-items-center'>
+    <section id='hero' className='relative h-screen grid place-items-center'>
       <div className='grid gap-4'>
         <h1
           className={cn(

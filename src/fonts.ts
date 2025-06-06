@@ -4,4 +4,5 @@ export const inter = Inter({ subsets: ['latin'] });
 export const firaCode = Fira_Code({
   weight: '700',
   style: 'normal',
+  subsets: ['latin'],
 });

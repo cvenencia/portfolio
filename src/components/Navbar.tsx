@@ -68,17 +68,16 @@ export function Navbar({ overlay }: NavbarProps) {
     <header
       className={cn(
         !mounted && 'h-32',
-        overlay ? 'fixed w-full' : 'sticky top-0',
+        overlay ? 'z-10 fixed w-full' : 'sticky top-0',
         'max-w-screen flex justify-center'
       )}
     >
       <nav
         className={cn(
-          'grow bg-background px-2 py-6',
+          'grow bg-background/70 backdrop-blur px-2 py-6',
           'transition-[max-width,background,margin]',
           !hasScrolled && 'max-w-full',
-          hasScrolled &&
-            'rounded-lg mt-4 container backdrop-blur bg-background/70 border'
+          hasScrolled && 'rounded-lg mt-4 container border'
         )}
       >
         <div

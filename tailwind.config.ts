@@ -64,8 +64,16 @@ export default {
       },
       animation: {
         'fade-in': 'fade-in 1s ease-in-out forwards',
+        'slow-rotate-pulse':
+          'rotate linear 30s infinite, full-pulse ease-in-out 5s infinite',
       },
       keyframes: {
+        rotate: {
+          to: { rotate: '360deg' },
+        },
+        'full-pulse': {
+          '50%': { opacity: '0' },
+        },
         'fade-in': {
           from: {
             opacity: '0',

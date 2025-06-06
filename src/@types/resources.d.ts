@@ -14,6 +14,9 @@ interface Resources {
     "hero": {
       "flag-alt": "Colombia's flag",
       "subtitle": "<0>Full-Stack Developer</0> from Colombia"
+    },
+    "about-me": {
+      "title": "About me"
     }
   }
 }
