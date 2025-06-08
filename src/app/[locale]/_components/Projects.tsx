@@ -3,6 +3,7 @@
 import { ParseKeys } from 'i18next';
 import { CodeXml, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/button';
@@ -66,16 +67,16 @@ function ProjectImage({
         <div className='transition-transform origin-bottom-left flex gap-2 absolute bottom-2 left-2 scale-0 group-focus-within:scale-100 group-hover:scale-100'>
           {codeUrl && (
             <Button variant='secondary' asChild>
-              <a href={codeUrl}>
+              <Link href={codeUrl}>
                 <CodeXml />
-              </a>
+              </Link>
             </Button>
           )}
           {detailsUrl && (
             <Button variant='secondary' asChild>
-              <a href={detailsUrl}>
+              <Link href={detailsUrl}>
                 <ExternalLink />
-              </a>
+              </Link>
             </Button>
           )}
         </div>

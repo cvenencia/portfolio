@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "gen-translation-resources": "i18next-resources-for-ts interface -i ./src/locales/en -o ./src/@types/resources.d.ts",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
