@@ -10,7 +10,7 @@ export default async function Index() {
     <Wrapper>
       <Background />
       <Navbar overlay />
-      <main className='text-lg'>
+      <main className='text-lg px-2'>
         <Hero />
         <AboutMe />
       </main>

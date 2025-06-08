@@ -13,7 +13,7 @@ export function AboutMe() {
         <SectionTitle>{t('about-me.title')}</SectionTitle>
         <div className='flex gap-12 items-center'>
           <p className='max-w-prose'>{t('about-me.description')}</p>
-          <Braces className='size-32 text-primary' />
+          <Braces className='hidden sm:block shrink-0 size-32 text-primary' />
         </div>
       </div>
     </section>
