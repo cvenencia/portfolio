@@ -18,6 +18,17 @@ interface Resources {
     "about-me": {
       "title": "About me",
       "description": "I'm a Web developer passionate about technology. I hold a B.S. in Systems Engineering, awarded in February 2023. Ever since, I've been working as a freelancer on various projects, including web scraping programs of varying complexity and web applications."
+    },
+    "projects": {
+      "title": "Projects",
+      "autogas": {
+        "index-alt": "Screenshot of Autogas App",
+        "title": "Autogas App",
+        "description": "Data management and document generation web application for local vehicle workshop"
+      }
+    },
+    "skills": {
+      "title": "Skills"
     }
   }
 }

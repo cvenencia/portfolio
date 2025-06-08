@@ -89,7 +89,7 @@ export default {
     animate,
     containerQueries,
     plugin(({ addVariant }) =>
-      addVariant('hocus', ['&:hover', '&:focus-visible'])
+      addVariant('hocus-visible', ['&:hover', '&:focus-visible'])
     ),
   ],
 } satisfies Config;

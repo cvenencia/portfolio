@@ -11,7 +11,7 @@ export function SectionTitle({ children }: SectionTitleProps) {
     <h2
       className={cn(
         firaCode.className,
-        'flex gap-2 font-bold text-3xl sm:text-5xl',
+        'flex justify-center gap-2 font-bold text-3xl sm:text-5xl',
         'before:content-["<"] after:content-["/>"] before:text-primary after:text-primary'
       )}
     >

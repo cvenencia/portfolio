@@ -48,7 +48,7 @@ function NavbarLink({ href, children, onClick }: NavbarLinkProps) {
         'transition-[opacity,transform] before:transition-[opacity,transform] after:transition-[opacity,transform]',
         'before:content-["<"] after:content-["_/>"] before:text-accent after:text-accent before:translate-x-2 after:-translate-x-2',
         'before:opacity-0 after:opacity-0',
-        'hocus:text-primary hocus:before:opacity-100 hocus:after:opacity-100 hocus:after:translate-x-0 hocus:before:translate-x-0'
+        'hocus-visible:text-primary hocus-visible:before:opacity-100 hocus-visible:after:opacity-100 hocus-visible:after:translate-x-0 hocus-visible:before:translate-x-0'
       )}
     >
       {children}

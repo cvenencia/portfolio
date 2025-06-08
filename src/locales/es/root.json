@@ -17,5 +17,16 @@
   "about-me": {
     "title": "Sobre mí",
     "description": "Soy un desarrollador web apasionado por la tecnología. Me gradué de Ingeniería de Sistemas en Febrero de 2023. Desde entonces he estado trabajando como Freelancer en diversos proyectos, como programas de Web Scraping de diversa complejidad y aplicaciones web."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "autogas": {
+      "index-alt": "Pantallazo de Autogas App",
+      "title": "Autogas App",
+      "description": "Aplicación web para manejo de datos y generación de documentos para taller de vehículos local"
+    }
+  },
+  "skills": {
+    "title": "Habilidades"
   }
 }
