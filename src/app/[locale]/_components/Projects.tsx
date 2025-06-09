@@ -1,9 +1,10 @@
 'use client';
 
 import { ParseKeys } from 'i18next';
-import { CodeXml, ExternalLink } from 'lucide-react';
+import { CodeXml, Earth, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ export function Projects() {
     <section id='projects' className='py-16 grid place-items-center'>
       <div className='container mx-auto grid gap-8'>
         <SectionTitle>{t('projects.title')}</SectionTitle>
-        <div className='grid gap-16 sm:grid-cols-2 xl:grid-cols-3'>
+        <div className='grid gap-16 items-start sm:grid-cols-2 xl:grid-cols-3'>
           {PROJECTS.map(project => (
             <Project key={project.titleKey} {...project} />
           ))}
@@ -33,7 +34,14 @@ function Project(project: _Project) {
   return (
     <article className='grid gap-4'>
       <ProjectImage {...project} />
-      <h3 className='font-bold text-2xl'>{t(project.titleKey)}</h3>
+      <h3 className='font-bold text-2xl'>
+        {t(project.titleKey)}{' '}
+        {project.category && (
+          <span className='text-xs bg-accent text-accent-foreground rounded-full p-1'>
+            {project.category}
+          </span>
+        )}
+      </h3>
       <p>{t(project.descriptionKey)}</p>
       <ul className='flex gap-2 flex-wrap'>
         {project.tags.map(tag => (
@@ -45,42 +53,74 @@ function Project(project: _Project) {
 }
 
 type ProjectImageProps = {
-  imageUrl: string;
+  lightImageUrl: string;
+  darkImageUrl: string;
   imageAltKey: ParseKeys<'root'>;
   codeUrl?: string;
   detailsUrl?: string;
+  webUrl?: string;
 };
 function ProjectImage({
-  imageUrl,
+  lightImageUrl,
+  darkImageUrl,
   imageAltKey,
   codeUrl,
   detailsUrl,
+  webUrl,
 }: ProjectImageProps) {
   const { t } = useTranslation();
   return (
     <div className='relative aspect-video rounded-lg overflow-hidden border'>
-      <Image src={imageUrl} alt={t(imageAltKey)} fill sizes='500px' />
+      <Image
+        src={lightImageUrl}
+        alt={t(imageAltKey)}
+        fill
+        sizes='500px'
+        className='dark:hidden'
+      />
+      <Image
+        src={darkImageUrl}
+        alt={t(imageAltKey)}
+        fill
+        sizes='500px'
+        className='hidden dark:block'
+      />
       <div
         className='transition-opacity group absolute inset-0 opacity-0 focus-within:opacity-100 hover:opacity-100 bg-black/80'
         tabIndex={-1}
       >
         <div className='transition-transform origin-bottom-left flex gap-2 absolute bottom-2 left-2 scale-0 group-focus-within:scale-100 group-hover:scale-100'>
           {codeUrl && (
-            <Button variant='secondary' asChild>
-              <Link href={codeUrl}>
-                <CodeXml />
-              </Link>
-            </Button>
+            <LinkButton href={codeUrl}>
+              <CodeXml />
+            </LinkButton>
           )}
           {detailsUrl && (
-            <Button variant='secondary' asChild>
-              <Link href={detailsUrl}>
-                <ExternalLink />
-              </Link>
-            </Button>
+            <LinkButton href={detailsUrl}>
+              <ExternalLink />
+            </LinkButton>
+          )}
+          {webUrl && (
+            <LinkButton href={webUrl}>
+              <Earth />
+            </LinkButton>
           )}
         </div>
       </div>
     </div>
+  );
+}
+
+type LinkButtonProps = {
+  children: ReactNode;
+  href: string;
+};
+function LinkButton({ children, href }: LinkButtonProps) {
+  return (
+    <Button variant='secondary' asChild>
+      <Link href={href} target='_blank'>
+        {children}
+      </Link>
+    </Button>
   );
 }

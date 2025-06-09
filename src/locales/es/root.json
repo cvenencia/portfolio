@@ -24,6 +24,16 @@
       "index-alt": "Pantallazo de Autogas App",
       "title": "Autogas App",
       "description": "Aplicación web para manejo de datos y generación de documentos para taller de vehículos local"
+    },
+    "todo": {
+      "index-alt": "Pantallazo de Todo App",
+      "title": "Todo App",
+      "description": "Aplicación de lista de tareas pendientes Full-Stack con registro de usuarios y selector de tema"
+    },
+    "countries": {
+      "index-alt": "Pantallazo de lista de países",
+      "title": "Lista de países",
+      "description": "Integración de API de países con selector de tema"
     }
   },
   "skills": {

@@ -25,6 +25,16 @@ interface Resources {
         "index-alt": "Screenshot of Autogas App",
         "title": "Autogas App",
         "description": "Data management and document generation web application for local vehicle workshop"
+      },
+      "todo": {
+        "index-alt": "Screenshot of Todo App",
+        "title": "Todo App",
+        "description": "Full-Stack Todo App with user authentication and theme switcher"
+      },
+      "countries": {
+        "index-alt": "Screenshot of Countries",
+        "title": "Countries list",
+        "description": "Countries API integration with theme switcher"
       }
     },
     "skills": {

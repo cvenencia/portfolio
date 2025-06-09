@@ -7,5 +7,6 @@
       "runningStatusMessage": "Generating translation resources...",
       "finishStatusMessage": "Resources generated!"
     }
-  ]
+  ],
+  "cSpell.words": ["Frontendmentor"]
 }
