@@ -2,6 +2,7 @@ import { Navbar } from '@/components/Navbar';
 
 import { AboutMe } from './_components/AboutMe';
 import { Background } from './_components/Background';
+import { Contact } from './_components/Contact';
 import { Hero } from './_components/Hero';
 import { Projects } from './_components/Projects';
 import { Skills } from './_components/Skills';
@@ -17,6 +18,7 @@ export default async function Index() {
         <AboutMe />
         <Projects />
         <Skills />
+        <Contact />
       </main>
     </Wrapper>
   );

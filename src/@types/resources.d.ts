@@ -3,6 +3,8 @@ interface Resources {
     "change-language": "Change language",
     "switch-light": "Switch to light mode",
     "switch-dark": "Switch to dark mode",
+    "copy": "Copy",
+    "copied": "Copied!",
     "nav": {
       "navigation": "Navigation",
       "about-me": "About me",
@@ -39,6 +41,9 @@ interface Resources {
     },
     "skills": {
       "title": "Skills"
+    },
+    "contact": {
+      "title": "Contact me"
     }
   }
 }

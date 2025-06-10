@@ -2,6 +2,8 @@
   "change-language": "Cambiar idioma",
   "switch-light": "Cambiar a modo claro",
   "switch-dark": "Cambiar a modo oscuro",
+  "copy": "Copiar",
+  "copied": "¡Copiado!",
   "nav": {
     "navigation": "Navegación",
     "about-me": "Sobre mí",
@@ -38,5 +40,8 @@
   },
   "skills": {
     "title": "Habilidades"
+  },
+  "contact": {
+    "title": "Contáctame"
   }
 }
