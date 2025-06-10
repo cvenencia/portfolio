@@ -1,8 +1,8 @@
+import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 
 import { AboutMe } from './_components/AboutMe';
 import { Background } from './_components/Background';
-import { Contact } from './_components/Contact';
 import { Credentials } from './_components/Credentials';
 import { Hero } from './_components/Hero';
 import { Projects } from './_components/Projects';
@@ -20,8 +20,8 @@ export default async function Index() {
         <Projects />
         <Skills />
         <Credentials />
-        <Contact />
       </main>
+      <Footer />
     </Wrapper>
   );
 }

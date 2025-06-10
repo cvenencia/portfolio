@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Trans, useTranslation } from 'react-i18next';
 
+import { CopyEmailButton } from '@/components/CopyEmailButton';
 import { firaCode } from '@/fonts';
 import { cn } from '@/lib/utils';
 
@@ -14,12 +15,12 @@ export function Hero() {
         <h1
           className={cn(
             firaCode.className,
-            'font-bold text-4xl sm:text-6xl lg:text-8xl'
+            'font-bold text-4xl sm:text-6xl lg:text-8xl text-center'
           )}
         >
           Carlos Venencia<span className='text-primary'>.</span>
         </h1>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 justify-center items-center'>
           <Image
             className='w-8 h-6'
             priority
@@ -37,6 +38,7 @@ export function Hero() {
             </Trans>
           </div>
         </div>
+        <CopyEmailButton />
       </div>
     </section>
   );

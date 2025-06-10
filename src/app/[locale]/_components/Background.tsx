@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-import BackgroundImage from '@/images/background.svg';
+import BackgroundImage from '@/assets/background.svg';
 import { cn } from '@/lib/utils';
 import { random } from '@/utils/numbers';
 

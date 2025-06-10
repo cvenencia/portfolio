@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { useEnvironment } from '@/contexts/Environment';
 import { cn } from '@/lib/utils';
 
-export default function CopyEmailButton() {
+export function CopyEmailButton() {
   const {
     i18n: { resolvedLanguage },
   } = useTranslation();
