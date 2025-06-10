@@ -3,9 +3,10 @@
 import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { CopyButton } from '@/components/CopyEmailButton';
+import { CopyButton } from '@/components/CopyButton';
 import { Separator } from '@/components/ui/separator';
 import { useEnvironment } from '@/contexts/Environment';
+import { cn } from '@/lib/utils';
 
 export default function CopyEmailButton() {
   const {
@@ -21,12 +22,16 @@ export default function CopyEmailButton() {
       size='lg'
       variant='outline'
       copyValue={email}
-      className='w-fit mx-auto text-xl [&_svg]:size-8 flex gap-4 h-auto py-4 hocus-visible:bg-background hocus-visible:text-foreground'
+      className={cn(
+        'w-fit mx-auto flex h-auto hocus-visible:bg-background hocus-visible:text-foreground',
+        'sm:text-xl sm:[&_svg]:size-8 sm:gap-4 sm:py-4',
+        'gap-2 py-2 max-sm:px-4'
+      )}
     >
       <Mail />
       <Separator
         orientation='vertical'
-        className='transition-colors w-[2px] bg-[currentColor]'
+        className='transition-colors sm:w-[2px] bg-[currentColor]'
       />
       {email}
     </CopyButton>
