@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { Button, ButtonProps } from './ui/button';
 
 type CopyButtonProps = {
-  copyValue: string;
+  copyValue?: string;
 } & ButtonProps;
 export function CopyButton({ copyValue, children, ...props }: CopyButtonProps) {
   const { t } = useTranslation();
@@ -20,6 +20,7 @@ export function CopyButton({ copyValue, children, ...props }: CopyButtonProps) {
       {...props}
       className={cn('group relative', props.className)}
       onClick={e => {
+        if (copyValue == null) return;
         const element = e.currentTarget;
         navigator.clipboard.writeText(copyValue);
         setCopied(true);
@@ -33,8 +34,8 @@ export function CopyButton({ copyValue, children, ...props }: CopyButtonProps) {
       <div
         className={cn(
           'flex gap-2 items-center justify-center rounded-[inherit] backdrop-blur',
-          'absolute inset-0 bg-accent/50 text-accent-foreground',
-          'origin-top-left transition-transform scale-0 group-hover:scale-100 group-focus-within:scale-100',
+          'absolute inset-0 bg-accent/50 text-accent-foreground scale-0 origin-top-left transition-transform',
+          copyValue && 'group-hover:scale-100 group-focus-within:scale-100',
           copied && 'scale-100'
         )}
       >

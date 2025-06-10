@@ -7,7 +7,6 @@ import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 
-import { EnvironmentProvider } from '@/contexts/Environment';
 import { inter } from '@/fonts';
 import { i18nConfig, initTranslations } from '@/i18n/i18n';
 import TranslationsProvider from '@/i18n/TranslationsProvider';
@@ -39,6 +38,10 @@ export async function generateMetadata({
   };
 }
 
+export function generateStaticParams() {
+  return i18nConfig.locales.map(locale => ({ locale }));
+}
+
 export default async function RootLayout(props: {
   children: ReactNode;
   params: Promise<{ locale: string }>;
@@ -53,28 +56,21 @@ export default async function RootLayout(props: {
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
-        <EnvironmentProvider
-          value={{
-            SPANISH_EMAIL: process.env.SPANISH_EMAIL!,
-            FALLBACK_EMAIL: process.env.FALLBACK_EMAIL!,
-          }}
-        >
-          <TranslationsProvider namespaces={['root']}>
-            <ThemeProvider attribute='class' disableTransitionOnChange>
-              <div vaul-drawer-wrapper=''>
-                <div className='relative flex min-h-screen flex-col bg-background'>
-                  <div>{children}</div>
-                </div>
+        <TranslationsProvider namespaces={['root']}>
+          <ThemeProvider attribute='class' disableTransitionOnChange>
+            <div vaul-drawer-wrapper=''>
+              <div className='relative flex min-h-screen flex-col bg-background'>
+                <div>{children}</div>
               </div>
-              <Toaster
-                richColors
-                duration={15000}
-                closeButton
-                position='bottom-center'
-              />
-            </ThemeProvider>
-          </TranslationsProvider>
-        </EnvironmentProvider>
+            </div>
+            <Toaster
+              richColors
+              duration={15000}
+              closeButton
+              position='bottom-center'
+            />
+          </ThemeProvider>
+        </TranslationsProvider>
       </body>
     </html>
   );
