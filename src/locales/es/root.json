@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Portafolio | Carlos Venencia",
+    "description": "Portafolio personal de Carlos Venencia, Desarrollador Full-Stack de Colombia"
+  },
   "change-language": "Cambiar idioma",
   "switch-light": "Cambiar a modo claro",
   "switch-dark": "Cambiar a modo oscuro",

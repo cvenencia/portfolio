@@ -1,5 +1,9 @@
 interface Resources {
   "root": {
+    "meta": {
+      "title": "Portfolio | Carlos Venencia",
+      "description": "Personal portfolio of Carlos Venencia, Full-Stack Developer from Colombia"
+    },
     "change-language": "Change language",
     "switch-light": "Switch to light mode",
     "switch-dark": "Switch to dark mode",
