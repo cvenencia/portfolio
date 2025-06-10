@@ -11,6 +11,7 @@ interface Resources {
       "projects": "Projects",
       "testimonials": "Testimonials",
       "skills": "Skills",
+      "credentials": "Credentials",
       "contact": "Contact"
     },
     "hero": {
@@ -41,6 +42,39 @@ interface Resources {
     },
     "skills": {
       "title": "Skills"
+    },
+    "credentials": {
+      "title": "Credentials",
+      "type": {
+        "university": "University degree",
+        "online-course": "Online Course",
+        "certificate": "Certificate"
+      },
+      "university": {
+        "title": "Bachelor of Systems engineering",
+        "period": "Jan 2018 - Dec 2022",
+        "image-alt": "Logo of Universidad del Norte"
+      },
+      "react-advanced": {
+        "title": "React Advanced",
+        "period": "Apr 2024",
+        "image-alt": "Logo of WDS React Simplified - Advanced"
+      },
+      "nextjs": {
+        "title": "NextJS",
+        "period": "Apr 2024",
+        "image-alt": "Logo of WDS React Simplified - NextJS"
+      },
+      "typescript": {
+        "title": "Typescript",
+        "period": "May 2024",
+        "image-alt": "Logo of WDS Typescript Simplified"
+      },
+      "pcep": {
+        "title": "Python",
+        "period": "Apr 2023",
+        "image-alt": "Logo of Python Institute"
+      }
     },
     "contact": {
       "title": "Contact me"

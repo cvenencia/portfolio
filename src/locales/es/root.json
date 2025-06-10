@@ -10,6 +10,7 @@
     "projects": "Proyectos",
     "testimonials": "Testimonios",
     "skills": "Habilidades",
+    "credentials": "Credenciales",
     "contact": "Contacto"
   },
   "hero": {
@@ -40,6 +41,39 @@
   },
   "skills": {
     "title": "Habilidades"
+  },
+  "credentials": {
+    "title": "Credenciales",
+    "type": {
+      "university": "Título universitario",
+      "online-course": "Curso Online",
+      "certificate": "Certificado"
+    },
+    "university": {
+      "title": "Ingeniería de Sistemas",
+      "period": "Ene 2018 - Dic 2022",
+      "image-alt": "Logo de Universidad del Norte"
+    },
+    "react-advanced": {
+      "title": "React Advanced",
+      "period": "Abr 2024",
+      "image-alt": "Logo de WDS React Simplified - Advanced"
+    },
+    "nextjs": {
+      "title": "NextJS",
+      "period": "Abr 2024",
+      "image-alt": "Logo de WDS React Simplified - NextJS"
+    },
+    "typescript": {
+      "title": "Typescript",
+      "period": "May 2024",
+      "image-alt": "Logo de WDS Typescript Simplified"
+    },
+    "pcep": {
+      "title": "Python",
+      "period": "Abr 2023",
+      "image-alt": "Logo de Python Institute"
+    }
   },
   "contact": {
     "title": "Contáctame"

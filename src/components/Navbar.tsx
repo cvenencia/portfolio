@@ -30,6 +30,7 @@ const LINKS: LinkData[] = [
   { href: '#projects', translationKey: 'nav.projects' },
   { href: '#skills', translationKey: 'nav.skills' },
   { href: '#testimonials', translationKey: 'nav.testimonials' },
+  { href: '#credentials', translationKey: 'nav.credentials' },
   { href: '#contact', translationKey: 'nav.contact' },
 ];
 
@@ -44,7 +45,7 @@ function NavbarLink({ href, children, onClick }: NavbarLinkProps) {
       onClick={onClick}
       href={href}
       className={cn(
-        'flex gap-1',
+        'flex lg:gap-2',
         'transition-[opacity,transform] before:transition-[opacity,transform] after:transition-[opacity,transform]',
         'before:content-["<"] after:content-["_/>"] before:text-accent after:text-accent before:translate-x-2 after:-translate-x-2',
         'before:opacity-0 after:opacity-0',
