@@ -79,7 +79,7 @@ export type Credential = {
   imageAltKey: Key;
   detailsUrl?: string;
 };
-export const CREDENTIALS: Credential[] = [
+export const CREDENTIALS: readonly Credential[] = [
   {
     categoryKey: 'credentials.type.university',
     titleKey: 'credentials.university.title',
