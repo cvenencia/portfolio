@@ -47,6 +47,9 @@ interface Resources {
     "skills": {
       "title": "Skills"
     },
+    "testimonials": {
+      "title": "Testimonials"
+    },
     "credentials": {
       "title": "Credentials",
       "type": {

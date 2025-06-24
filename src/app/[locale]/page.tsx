@@ -7,6 +7,7 @@ import { Credentials } from './_components/Credentials';
 import { Hero } from './_components/Hero';
 import { Projects } from './_components/Projects';
 import { Skills } from './_components/Skills';
+import { Testimonials } from './_components/Testimonials';
 import { Wrapper } from './_components/Wrapper';
 
 export default async function Index() {
@@ -19,6 +20,7 @@ export default async function Index() {
         <AboutMe />
         <Projects />
         <Skills />
+        <Testimonials />
         <Credentials />
       </main>
       <Footer />

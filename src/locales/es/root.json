@@ -46,6 +46,9 @@
   "skills": {
     "title": "Habilidades"
   },
+  "testimonials": {
+    "title": "Testimonios"
+  },
   "credentials": {
     "title": "Credenciales",
     "type": {
