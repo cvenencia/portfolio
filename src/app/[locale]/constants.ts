@@ -20,8 +20,8 @@ export type Project = {
 };
 export const PROJECTS: readonly Project[] = [
   {
-    lightImageUrl: '/images/projects/autogas/light-index.png',
-    darkImageUrl: '/images/projects/autogas/dark-index.png',
+    lightImageUrl: '/images/projects/autogas/index-light.png',
+    darkImageUrl: '/images/projects/autogas/index-dark.png',
     imageAltKey: 'projects.autogas.index-alt',
     titleKey: 'projects.autogas.title',
     descriptionKey: 'projects.autogas.description',
@@ -40,8 +40,8 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     category: 'Frontendmentor',
-    lightImageUrl: '/images/projects/todo-app/light-index.png',
-    darkImageUrl: '/images/projects/todo-app/dark-index.png',
+    lightImageUrl: '/images/projects/todo-app/index-light.png',
+    darkImageUrl: '/images/projects/todo-app/index-dark.png',
     imageAltKey: 'projects.todo.index-alt',
     titleKey: 'projects.todo.title',
     descriptionKey: 'projects.todo.description',
@@ -53,8 +53,8 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     category: 'Frontendmentor',
-    lightImageUrl: '/images/projects/countries/light-index.png',
-    darkImageUrl: '/images/projects/countries/dark-index.png',
+    lightImageUrl: '/images/projects/countries/index-light.png',
+    darkImageUrl: '/images/projects/countries/index-dark.png',
     imageAltKey: 'projects.countries.index-alt',
     titleKey: 'projects.countries.title',
     descriptionKey: 'projects.countries.description',
