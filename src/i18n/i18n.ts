@@ -1,4 +1,4 @@
-import { createInstance, i18n,Resource } from 'i18next';
+import { createInstance, i18n, Namespace, Resource } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { Config } from 'next-i18n-router/dist/types';
 import { initReactI18next } from 'react-i18next/initReactI18next';
@@ -11,7 +11,7 @@ export const i18nConfig: Config = {
 
 export async function initTranslations(
   locale: string,
-  namespaces: string[],
+  namespaces: Namespace,
   i18nInstance?: i18n,
   resources?: Resource
 ) {
@@ -33,8 +33,8 @@ export async function initTranslations(
     resources,
     fallbackLng: i18nConfig.defaultLocale,
     supportedLngs: i18nConfig.locales,
-    defaultNS: namespaces[0],
-    fallbackNS: namespaces[0],
+    defaultNS: namespaces,
+    fallbackNS: namespaces,
     ns: namespaces,
     preload: resources ? [] : i18nConfig.locales,
   });

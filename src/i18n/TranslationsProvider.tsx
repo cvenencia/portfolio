@@ -1,6 +1,6 @@
 'use client';
 
-import { createInstance, Resource } from 'i18next';
+import { createInstance, Namespace, Resource } from 'i18next';
 import { useParams } from 'next/navigation';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -9,7 +9,7 @@ import { initTranslations } from '@/i18n/i18n';
 
 type TranslationsProviderProps = {
   children: ReactNode;
-  namespaces: string[];
+  namespaces: Namespace;
   resources?: Resource;
 };
 

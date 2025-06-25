@@ -3,12 +3,14 @@
     "title": "Portfolio | Carlos Venencia",
     "description": "Personal portfolio of Carlos Venencia, Full-Stack Developer from Colombia"
   },
+  "options": "Options",
   "change-language": "Change language",
   "switch-light": "Switch to light mode",
   "switch-dark": "Switch to dark mode",
   "copy": "Copy",
   "copied": "Copied!",
   "nav": {
+    "homepage": "Homepage",
     "navigation": "Navigation",
     "about-me": "About me",
     "projects": "Projects",

@@ -2,6 +2,8 @@
 
 import { ParseKeys } from 'i18next';
 import { Menu } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
@@ -17,8 +19,7 @@ import { useMounted } from '@/hooks/useMounted';
 import { useViewportBelow } from '@/hooks/useViewportBelow';
 import { cn } from '@/lib/utils';
 
-import { LanguagesDropdown } from './LanguagesDropdown';
-import { ThemeButton } from './ThemeButton';
+import { SiteOptionsDropdown } from './SiteOptionsDropdown';
 import { Button } from './ui/button';
 
 type LinkData = {
@@ -26,11 +27,11 @@ type LinkData = {
   translationKey: ParseKeys<'root'>;
 };
 const LINKS: LinkData[] = [
-  { href: '#about-me', translationKey: 'nav.about-me' },
-  { href: '#projects', translationKey: 'nav.projects' },
-  { href: '#skills', translationKey: 'nav.skills' },
-  { href: '#testimonials', translationKey: 'nav.testimonials' },
-  { href: '#credentials', translationKey: 'nav.credentials' },
+  { href: '/#about-me', translationKey: 'nav.about-me' },
+  { href: '/#projects', translationKey: 'nav.projects' },
+  { href: '/#skills', translationKey: 'nav.skills' },
+  { href: '/#testimonials', translationKey: 'nav.testimonials' },
+  { href: '/#credentials', translationKey: 'nav.credentials' },
 ];
 
 type NavbarLinkProps = {
@@ -46,7 +47,7 @@ function NavbarLink({
   size = 'normal',
 }: NavbarLinkProps) {
   return (
-    <a
+    <Link
       onClick={onClick}
       href={href}
       className={cn(
@@ -59,7 +60,30 @@ function NavbarLink({
       )}
     >
       {children}
-    </a>
+    </Link>
+  );
+}
+
+function HomepageLink() {
+  const { t } = useTranslation();
+  return (
+    <Link href='/'>
+      <span className='sr-only'>{t('nav.homepage')}</span>
+      <Image
+        className='dark:hidden'
+        src='/logo-light.png'
+        alt='Logo'
+        width={32}
+        height={32}
+      />
+      <Image
+        className='hidden dark:block'
+        src='/logo-dark.png'
+        alt='Logo'
+        width={32}
+        height={32}
+      />
+    </Link>
   );
 }
 
@@ -84,7 +108,7 @@ export function Navbar({ overlay }: NavbarProps) {
           'grow bg-background/70 backdrop-blur px-2 py-6',
           'transition-[max-width,background,margin]',
           !hasScrolled && 'max-w-full',
-          hasScrolled && 'rounded-lg mt-4 container border'
+          hasScrolled && 'rounded-lg m-4 container border'
         )}
       >
         <div
@@ -106,9 +130,9 @@ function Mobile() {
 
   return (
     <>
-      <LanguagesDropdown />
+      <HomepageLink />
       <div className='flex gap-2'>
-        <ThemeButton />
+        <SiteOptionsDropdown />
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild onClick={() => setOpen(true)}>
             <Button variant='ghost'>
@@ -149,7 +173,7 @@ function Desktop() {
   const { t } = useTranslation();
   return (
     <>
-      <LanguagesDropdown />
+      <HomepageLink />
       <ul className='flex'>
         {LINKS.map(link => (
           <li key={link.href}>
@@ -157,7 +181,7 @@ function Desktop() {
           </li>
         ))}
       </ul>
-      <ThemeButton />
+      <SiteOptionsDropdown />
     </>
   );
 }
