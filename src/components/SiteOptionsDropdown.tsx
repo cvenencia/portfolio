@@ -1,6 +1,6 @@
 'use client';
 
-import { Languages, Moon, Settings, Sun } from 'lucide-react';
+import { Languages, Moon, Pin, Settings, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
@@ -32,6 +32,7 @@ function LanguageLink({ locale }: { locale: string }) {
   const params = useParams<{ locale: string }>();
   const regex = RegExp(`^/${params.locale}`);
   const pathname = usePathname().replace(regex, '');
+  const isCurrentLocale = params.locale === locale;
 
   const languageDisplayNames = new Intl.DisplayNames([locale], {
     type: 'language',
@@ -41,6 +42,7 @@ function LanguageLink({ locale }: { locale: string }) {
   return (
     <Link href={`/${locale}/${pathname}`}>
       <DropdownMenuItem className='cursor-pointer'>
+        <Pin className={cn(!isCurrentLocale && 'opacity-0')} />
         {displayName}
       </DropdownMenuItem>
     </Link>
