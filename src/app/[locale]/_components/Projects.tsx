@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { SectionTitle } from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
 
 import { type Project as _Project, PROJECTS } from '../constants';
-import { SectionTitle } from './SectionTitle';
 import { SkillTag } from './SkillTag';
 
 export function Projects() {

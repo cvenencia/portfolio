@@ -2,9 +2,9 @@
 
 import { useTranslation } from 'react-i18next';
 
+import { SectionTitle } from '@/components/SectionTitle';
 import { SKILLS } from '@/features/skills';
 
-import { SectionTitle } from './SectionTitle';
 import { SkillTag } from './SkillTag';
 
 export function Skills() {

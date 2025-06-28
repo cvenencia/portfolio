@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
+import { SectionTitle } from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -16,7 +17,6 @@ import {
 import { cn } from '@/lib/utils';
 
 import { Credential as _Credential, CREDENTIALS } from '../constants';
-import { SectionTitle } from './SectionTitle';
 
 export function Credentials() {
   const { t } = useTranslation();

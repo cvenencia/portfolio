@@ -3,7 +3,7 @@
 import { Braces } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { SectionTitle } from './SectionTitle';
+import { SectionTitle } from '@/components/SectionTitle';
 
 export function AboutMe() {
   const { t } = useTranslation();

@@ -4,6 +4,7 @@ import { Quote, Star, User } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
+import { SectionTitle } from '@/components/SectionTitle';
 import {
   Carousel,
   CarouselContent,
@@ -15,7 +16,6 @@ import { cn } from '@/lib/utils';
 import { range } from '@/utils/numbers';
 
 import { Testimonial, TESTIMONIALS } from '../constants';
-import { SectionTitle } from './SectionTitle';
 
 export function Testimonials() {
   const { t } = useTranslation();

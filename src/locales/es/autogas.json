@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Proyecto Autogas App | Carlos Venencia",
+    "description": "Muestra de proyecto de Autogas App: aplicación web para manejo de datos y generación de documentos para taller de vehículos local"
+  },
+  "hero": {
+    "description": "Centro de conversión de vehículos a Gas Natural Vehicular (GNV) ubicada en <1>Barranquilla, Colombia</1>",
+    "link-text": "Página web de la empresa",
+    "logo-alt": "Logo de Autogas la 17"
+  },
+  "project": {
+    "title": "Proyecto",
+
+    "subtitle-1": "Descripción de la empresa",
+    "description-1": "Autogas la 17 es una empresa ubicada en Barranquilla, Colombia, dedicada a la conversión de vehículos a gas natural. Esta área de trabajo tiene <1>procesos administrativos y operativos estrictos que requieren de documentación</1>. Cada uno de estos documentos incluye información variada sobre el cliente, el vehículo, elementos de inventario usados, y datos generales sobre el servicio. Toda esta información debe ser digitada correctamente en cada documento. En caso de errores, se pueden retrasar los servicios prestados y recibir sanciones.",
+
+    "subtitle-2": "Problema y solución",
+    "description-2": "La empresa manejaba la información relacionada a los servicios por medio de archivos compartidos de <1>Google Sheets</1>. A pesar de que este método funcionó durante mucho tiempo, <2>los errores administrativos eran muy frecuentes</2> (más de lo aceptable). Es por esto que la empresa decidió desarrollar una aplicación que le permitiera:",
+
+    "list-1": "<0>Consolidar</0> toda la información en un solo lugar. Una única base de datos para clientes, vehículos, inventario, y más.",
+    "list-2": "<0>Generar de forma automática</0> la documentación, agarrando la información directamente de la base de datos.",
+    "list-3": "<0>Tener un sistema robusto</0> con validación de datos.",
+    "list-4": "<0>Optimizar</0> los procesos administrativos y operativos.",
+    "list-5": "<0>Minimizar</0> los errores y uso de papel."
+  },
+  "features": {
+    "title": "Características",
+    "db": {
+      "title": "Base de datos de servicios",
+      "description": "Base de datos unificada para tener registro de todos los servicios realizados, lo cual incluye información de clientes, vehículos, inventario, facturación, y más.",
+      "services-alt": "Servicios",
+      "clients-alt": "Clientes",
+      "vehicles-alt": "Vehículos"
+    },
+    "documents": {
+      "title": "Generación de documentos basados en plantillas",
+      "description": "Las plantillas son archivos Excel creados por un administrador. Al momento de añadir una plantilla se puede seleccionar los tipos de servicio que la usarán. Luego, para cada servicio abierto se puede crear un documento por plantilla. La aplicación <1>automáticamente rellena los datos</1> del servicio que el documento requiera en el archivo Excel. Por último, el archivo final es convertido a PDF.",
+      "template-form-alt": "Formulario para añadir una plantilla en la aplicación",
+      "service-alt": "Página de un servicio",
+      "service-documents-alt": "Documentos de un servicio. Se genera un identificador único a cada documento"
+    },
+    "users": {
+      "title": "Autenticación y sistema de permisos granular",
+      "description": "Los usuarios inician sesión en la aplicación usando un correo electrónico. La aplicación implementa una versión simplificada de <1>PBAC</1> (Control de Acceso Basado en Políticas, por sus siglas en inglés). Esto significa que a cada usuario se le pueden asignar recursos específicos y acciones permitidas, lo cual permite tener un <3>control muy granular sobre cada usuario</3> de la aplicación.",
+      "user-form-alt": "Formulario para añadir un usuario a la aplicación",
+      "login-alt": "Formulario para iniciar sesión con un correo electrónico. El usuario recibe un enlace para iniciar sesión."
+    },
+    "events": {
+      "title": "Agenda para eventos y recordatorios",
+      "description": "Agenda integrada en la aplicación para manejo de eventos y recordatorios. Útil principalmente para el equipo comercial. La agenda puede ser visualizada en un <1>calendario mensual o semanal</1>. Los eventos pueden ser de todo el día o tener hora de inicio y fin. También pueden estar asociados a un servicio específico. Esto permite la <3>generación de recordatorios de forma automática</3> para ciertos servicios. Los eventos tienen 2 tipos y 6 categorías con una leyenda de colores para fácil identificación y organización.",
+      "month-alt": "Vista mensual",
+      "week-alt": "Vista semanal",
+      "event-alt": "Vista de un evento",
+      "legend-alt": "Leyenda de colores"
+    }
+  }
+}
