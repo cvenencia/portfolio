@@ -1,6 +1,6 @@
 'use client';
 
-import { ParseKeys } from 'i18next';
+import { Namespace, ParseKeys } from 'i18next';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,17 +22,10 @@ import { cn } from '@/lib/utils';
 import { SiteOptionsDropdown } from './SiteOptionsDropdown';
 import { Button } from './ui/button';
 
-type LinkData = {
+export type LinkData<N extends Namespace> = {
   href: string;
-  translationKey: ParseKeys<'root'>;
+  translationKey: ParseKeys<N>;
 };
-const LINKS: LinkData[] = [
-  { href: '/#about-me', translationKey: 'nav.about-me' },
-  { href: '/#projects', translationKey: 'nav.projects' },
-  { href: '/#skills', translationKey: 'nav.skills' },
-  { href: '/#testimonials', translationKey: 'nav.testimonials' },
-  { href: '/#credentials', translationKey: 'nav.credentials' },
-];
 
 type NavbarLinkProps = {
   href: string;
@@ -46,8 +39,9 @@ function NavbarLink({
   onClick,
   size = 'normal',
 }: NavbarLinkProps) {
+  const Element = href.startsWith('#') ? 'a' : Link;
   return (
-    <Link
+    <Element
       onClick={onClick}
       href={href}
       className={cn(
@@ -60,7 +54,7 @@ function NavbarLink({
       )}
     >
       {children}
-    </Link>
+    </Element>
   );
 }
 
@@ -87,10 +81,14 @@ function HomepageLink() {
   );
 }
 
-type NavbarProps = {
-  overlay?: boolean;
+type NavbarProps<N extends Namespace> = {
+  links: LinkData<N>[];
+  namespace: N;
 };
-export function Navbar({ overlay }: NavbarProps) {
+export function Navbar<N extends Namespace>({
+  links,
+  namespace,
+}: NavbarProps<N>) {
   const isSmallScreen = useMediaQuery({ maxWidth: 800 });
   const mounted = useMounted();
   const hasScrolled = useViewportBelow('#hero');
@@ -99,7 +97,7 @@ export function Navbar({ overlay }: NavbarProps) {
     <header
       className={cn(
         !mounted && 'h-32',
-        overlay ? 'z-10 fixed w-full' : 'sticky top-0',
+        'z-10 fixed w-full',
         'max-w-screen flex justify-center'
       )}
     >
@@ -117,16 +115,26 @@ export function Navbar({ overlay }: NavbarProps) {
             'flex justify-between items-center gap-1 lg:gap-4'
           )}
         >
-          {mounted && (isSmallScreen ? <Mobile /> : <Desktop />)}
+          {mounted &&
+            (isSmallScreen ? (
+              <Mobile links={links} namespace={namespace} />
+            ) : (
+              <Desktop links={links} namespace={namespace} />
+            ))}
         </div>
       </nav>
     </header>
   );
 }
 
-function Mobile() {
+type MobileProps<N extends Namespace> = {
+  links: LinkData<N>[];
+  namespace: N;
+};
+function Mobile<N extends Namespace>({ links, namespace }: MobileProps<N>) {
   const [open, setOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation(namespace);
+  const { t: tRoot } = useTranslation();
 
   return (
     <>
@@ -143,19 +151,22 @@ function Mobile() {
             side='right'
             className='max-h-screen max-w-[250px] overflow-auto'
           >
-            <SheetTitle className='sr-only'>{t('nav.navigation')}</SheetTitle>
+            <SheetTitle className='sr-only'>
+              {tRoot('nav.navigation')}
+            </SheetTitle>
             <SheetDescription className='sr-only'>
-              {t('nav.navigation')}
+              {tRoot('nav.navigation')}
             </SheetDescription>
             <nav className='h-full'>
               <ul className='h-full grid gap-8 content-center py-4'>
-                {LINKS.map(link => (
+                {links.map(link => (
                   <li key={link.href}>
                     <NavbarLink
                       href={link.href}
                       onClick={() => setOpen(false)}
                       size='large'
                     >
+                      {/* @ts-expect-error Namespace is passed in props, but unable to detect it */}
                       {t(link.translationKey)}
                     </NavbarLink>
                   </li>
@@ -169,15 +180,22 @@ function Mobile() {
   );
 }
 
-function Desktop() {
-  const { t } = useTranslation();
+type DesktopProps<N extends Namespace> = {
+  links: LinkData<N>[];
+  namespace: N;
+};
+function Desktop<N extends Namespace>({ links, namespace }: DesktopProps<N>) {
+  const { t } = useTranslation(namespace);
   return (
     <>
       <HomepageLink />
       <ul className='flex'>
-        {LINKS.map(link => (
+        {links.map(link => (
           <li key={link.href}>
-            <NavbarLink href={link.href}>{t(link.translationKey)}</NavbarLink>
+            <NavbarLink href={link.href}>
+              {/* @ts-expect-error Namespace is passed in props, but unable to detect it */}
+              {t(link.translationKey)}
+            </NavbarLink>
           </li>
         ))}
       </ul>

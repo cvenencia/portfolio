@@ -40,7 +40,7 @@ function LanguageLink({ locale }: { locale: string }) {
   const displayName = capitalize(languageDisplayNames.of(locale) || 'unknown');
 
   return (
-    <Link href={`/${locale}/${pathname}`}>
+    <Link href={`/${locale}${pathname}`}>
       <DropdownMenuItem className='cursor-pointer'>
         <Pin className={cn(!isCurrentLocale && 'opacity-0')} />
         {displayName}
@@ -70,7 +70,7 @@ function ThemeButton() {
   const { resolvedTheme: theme, setTheme } = useTheme();
   const isDark = theme === 'dark';
   const mounted = useMounted();
-  const { t } = useTranslation('root');
+  const { t } = useTranslation();
 
   if (!mounted) return;
   return (

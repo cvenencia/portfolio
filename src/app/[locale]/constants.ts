@@ -17,6 +17,8 @@ export type Project = {
   codeUrl?: string;
   detailsUrl?: string;
   webUrl?: string;
+
+  detailsExternal: boolean;
 };
 export const PROJECTS: readonly Project[] = [
   {
@@ -37,6 +39,7 @@ export const PROJECTS: readonly Project[] = [
       'Postgres',
     ],
     detailsUrl: '/autogas-app',
+    detailsExternal: false,
   },
   {
     category: 'Frontendmentor',
@@ -50,6 +53,7 @@ export const PROJECTS: readonly Project[] = [
     detailsUrl: 'https://todo-app.cvenencia.com',
     webUrl:
       'https://www.frontendmentor.io/solutions/fullstack-solution-with-user-login-and-registration-functionality-XN2AV2hWg6',
+    detailsExternal: true,
   },
   {
     category: 'Frontendmentor',
@@ -64,6 +68,7 @@ export const PROJECTS: readonly Project[] = [
     detailsUrl: 'https://countries.cvenencia.com',
     webUrl:
       'https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-w2slV5AAwV',
+    detailsExternal: true,
   },
 ];
 

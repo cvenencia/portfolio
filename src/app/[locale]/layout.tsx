@@ -7,13 +7,8 @@ import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 
-import { Footer } from '@/components/Footer';
-import { Navbar } from '@/components/Navbar';
 import { inter } from '@/fonts';
-import { i18nConfig, initTranslations } from '@/i18n/i18n';
-import TranslationsProvider from '@/i18n/TranslationsProvider';
-
-import { Wrapper } from './_components/Wrapper';
+import { i18nConfig, initTranslations, TranslationsProvider } from '@/i18n';
 
 export async function generateMetadata({
   params,
@@ -60,17 +55,11 @@ export default async function RootLayout(props: {
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
-        <TranslationsProvider namespaces={['root']}>
+        <TranslationsProvider namespaces='autogas'>
           <ThemeProvider attribute='class' disableTransitionOnChange>
             <div vaul-drawer-wrapper=''>
               <div className='relative flex min-h-screen flex-col bg-background'>
-                <div>
-                  <Wrapper>
-                    <Navbar overlay />
-                    {children}
-                    <Footer />
-                  </Wrapper>
-                </div>
+                <div>{children}</div>
               </div>
             </div>
             <Toaster

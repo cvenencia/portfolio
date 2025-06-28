@@ -11,7 +11,7 @@ export const i18nConfig: Config = {
 
 export async function initTranslations(
   locale: string,
-  namespaces: Namespace,
+  namespaces: Namespace[],
   i18nInstance?: i18n,
   resources?: Resource
 ) {
@@ -27,15 +27,17 @@ export async function initTranslations(
       )
     );
   }
+  if (!namespaces.includes('root')) {
+    namespaces = ['root', ...namespaces];
+  }
 
   await i18nInstance.init({
     lng: locale,
     resources,
     fallbackLng: i18nConfig.defaultLocale,
     supportedLngs: i18nConfig.locales,
-    defaultNS: namespaces,
-    fallbackNS: namespaces,
-    ns: namespaces,
+    defaultNS: 'root',
+    ns: namespaces as string[],
     preload: resources ? [] : i18nConfig.locales,
   });
 

@@ -3,6 +3,11 @@
     "title": "Proyecto Autogas App | Carlos Venencia",
     "description": "Muestra de proyecto de Autogas App: aplicación web para manejo de datos y generación de documentos para taller de vehículos local"
   },
+  "nav": {
+    "hero": "Empresa",
+    "project": "Proyecto",
+    "features": "Características"
+  },
   "hero": {
     "description": "Centro de conversión de vehículos a Gas Natural Vehicular (GNV) ubicada en <1>Barranquilla, Colombia</1>",
     "link-text": "Página web de la empresa",

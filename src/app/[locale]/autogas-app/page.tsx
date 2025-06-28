@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
 
+import { FadeInWrapper } from '@/components/FadeInWrapper';
+import { Footer } from '@/components/Footer';
+import { LinkData, Navbar } from '@/components/Navbar';
 import { initTranslations } from '@/i18n';
-import TranslationsProvider from '@/i18n/TranslationsProvider';
 
 import { Features } from './_components/Features';
 import { Hero } from './_components/Hero';
-import { ProjectDescription } from './_components/ProjectDescription';
+import { Project } from './_components/Project';
 
 export async function generateMetadata({
   params,
@@ -24,14 +26,21 @@ export async function generateMetadata({
   };
 }
 
-export default function AutogasApp() {
+const LINKS: LinkData<'autogas'>[] = [
+  { href: '#hero', translationKey: 'nav.hero' },
+  { href: '#project', translationKey: 'nav.project' },
+  { href: '#features', translationKey: 'nav.features' },
+];
+export default async function AutogasApp() {
   return (
-    <TranslationsProvider namespaces='autogas'>
+    <FadeInWrapper>
+      <Navbar links={LINKS} namespace='autogas' />
       <main className='px-2'>
         <Hero />
-        <ProjectDescription />
+        <Project />
         <Features />
       </main>
-    </TranslationsProvider>
+      <Footer />
+    </FadeInWrapper>
   );
 }

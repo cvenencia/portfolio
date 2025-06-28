@@ -59,6 +59,7 @@ type ProjectImageProps = {
   codeUrl?: string;
   detailsUrl?: string;
   webUrl?: string;
+  detailsExternal: boolean;
 };
 function ProjectImage({
   lightImageUrl,
@@ -67,6 +68,7 @@ function ProjectImage({
   codeUrl,
   detailsUrl,
   webUrl,
+  detailsExternal,
 }: ProjectImageProps) {
   const { t } = useTranslation();
   return (
@@ -91,17 +93,17 @@ function ProjectImage({
       >
         <div className='transition-transform origin-bottom-left flex gap-2 absolute bottom-2 left-2 scale-0 group-focus-within:scale-100 group-hover:scale-100'>
           {codeUrl && (
-            <LinkButton href={codeUrl}>
+            <LinkButton href={codeUrl} external>
               <CodeXml />
             </LinkButton>
           )}
           {detailsUrl && (
-            <LinkButton href={detailsUrl}>
+            <LinkButton href={detailsUrl} external={detailsExternal}>
               <ExternalLink />
             </LinkButton>
           )}
           {webUrl && (
-            <LinkButton href={webUrl}>
+            <LinkButton href={webUrl} external>
               <Earth />
             </LinkButton>
           )}
@@ -114,11 +116,12 @@ function ProjectImage({
 type LinkButtonProps = {
   children: ReactNode;
   href: string;
+  external?: boolean;
 };
-function LinkButton({ children, href }: LinkButtonProps) {
+function LinkButton({ children, href, external }: LinkButtonProps) {
   return (
     <Button variant='secondary' asChild>
-      <Link href={href} target='_blank'>
+      <Link href={href} target={external ? '_blank' : undefined}>
         {children}
       </Link>
     </Button>

@@ -14,7 +14,7 @@ type WrapperProps = {
  * This wrapper removes the fade-in animation and opacity class after
  * the fade is done.
  */
-export function Wrapper({ children }: WrapperProps) {
+export function FadeInWrapper({ children }: WrapperProps) {
   const [className, setClassName] = useState<string | undefined>(
     'animate-fade-in opacity-0'
   );

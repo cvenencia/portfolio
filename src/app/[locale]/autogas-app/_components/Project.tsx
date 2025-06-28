@@ -20,11 +20,11 @@ function ListItem({ _key }: ListItemProps) {
   );
 }
 
-export function ProjectDescription() {
+export function Project() {
   const { t } = useTranslation('autogas');
   const subtitleClass = 'font-bold text-lg mt-4';
   return (
-    <section id='project-description' className='py-16 grid place-items-center'>
+    <section id='project' className='py-16 grid place-items-center'>
       <div className='container mx-auto grid place-items-center gap-8'>
         <SectionTitle>{t('project.title')}</SectionTitle>
         <div className='flex gap-4'>

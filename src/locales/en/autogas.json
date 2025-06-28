@@ -3,6 +3,11 @@
     "title": "Autogas App Project | Carlos Venencia",
     "description": "Showcase of the Autogas App project: web application for data management and document generation for a local vehicle workshop"
   },
+  "nav": {
+    "hero": "Company",
+    "project": "Project",
+    "features": "Features"
+  },
   "hero": {
     "description": "Vehicle conversion center to Compressed Natural Gas (CNG) located in <1>Barranquilla, Colombia</1>",
     "link-text": "Company website",
