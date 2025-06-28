@@ -39,6 +39,11 @@ export async function initTranslations(
     defaultNS: 'root',
     ns: namespaces as string[],
     preload: resources ? [] : i18nConfig.locales,
+    saveMissing: true,
+    missingKeyHandler: (locale, ns, key) =>
+      console.warn(
+        `[i18next] Missing translation key: "${key}" in namespace: "${ns}" in locale: "${locale}"`
+      ),
   });
 
   return {
