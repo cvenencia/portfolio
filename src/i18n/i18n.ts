@@ -28,7 +28,7 @@ export async function initTranslations(
     );
   }
   if (!namespaces.includes('root')) {
-    namespaces = ['root', ...namespaces];
+    namespaces.push('root');
   }
 
   await i18nInstance.init({

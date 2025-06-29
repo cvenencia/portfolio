@@ -17,8 +17,8 @@ export async function generateMetadata({
   const locale = (await params).locale;
   const { t } = await initTranslations(locale, ['autogas']);
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title: t('autogas:meta.title'),
+    description: t('autogas:meta.description'),
     robots: {
       index: true,
       follow: true,
