@@ -19,6 +19,7 @@ import { useMounted } from '@/hooks/useMounted';
 import { useViewportBelow } from '@/hooks/useViewportBelow';
 import { cn } from '@/lib/utils';
 
+import { LocaleLink } from './LocaleLink';
 import { SiteOptionsDropdown } from './SiteOptionsDropdown';
 import { Button } from './ui/button';
 
@@ -61,7 +62,7 @@ function NavbarLink({
 function HomepageLink() {
   const { t } = useTranslation();
   return (
-    <Link href='/'>
+    <LocaleLink href='/'>
       <span className='sr-only'>{t('nav.homepage')}</span>
       <Image
         className='dark:hidden'
@@ -77,7 +78,7 @@ function HomepageLink() {
         width={32}
         height={32}
       />
-    </Link>
+    </LocaleLink>
   );
 }
 

@@ -9,6 +9,7 @@ import { Toaster } from 'sonner';
 
 import { inter } from '@/fonts';
 import { i18nConfig, initTranslations, TranslationsProvider } from '@/i18n';
+import { generateMetadataAlternates } from '@/utils/metadata';
 
 export async function generateMetadata({
   params,
@@ -34,6 +35,7 @@ export async function generateMetadata({
       index: true,
       follow: true,
     },
+    alternates: generateMetadataAlternates(locale, '/'),
   };
 }
 

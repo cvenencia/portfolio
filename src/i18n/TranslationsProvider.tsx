@@ -1,11 +1,11 @@
 'use client';
 
 import { createInstance, Namespace, Resource } from 'i18next';
-import { useCurrentLocale } from 'next-i18n-router/client';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 
-import { i18nConfig, initTranslations } from '@/i18n';
+import { useCurrentLocale } from '@/hooks/useCurrentLocale';
+import { initTranslations } from '@/i18n';
 
 type TranslationsProviderProps = {
   children: ReactNode;
@@ -19,7 +19,7 @@ export function TranslationsProvider({
   resources,
 }: TranslationsProviderProps) {
   const i18n = createInstance();
-  const locale = useCurrentLocale(i18nConfig);
+  const locale = useCurrentLocale();
   if (!locale) return children;
   if (typeof namespaces === 'string') {
     namespaces = [namespaces];

@@ -4,6 +4,7 @@ import { FadeInWrapper } from '@/components/FadeInWrapper';
 import { Footer } from '@/components/Footer';
 import { LinkData, Navbar } from '@/components/Navbar';
 import { initTranslations } from '@/i18n';
+import { generateMetadataAlternates } from '@/utils/metadata';
 
 import { Features } from './_components/Features';
 import { Hero } from './_components/Hero';
@@ -19,10 +20,7 @@ export async function generateMetadata({
   return {
     title: t('autogas:meta.title'),
     description: t('autogas:meta.description'),
-    robots: {
-      index: true,
-      follow: true,
-    },
+    alternates: generateMetadataAlternates(locale, '/autogas-app'),
   };
 }
 

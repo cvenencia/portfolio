@@ -3,10 +3,10 @@
 import { ParseKeys } from 'i18next';
 import { CodeXml, Earth, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { LocaleLink } from '@/components/LocaleLink';
 import { SectionTitle } from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
 
@@ -119,11 +119,12 @@ type LinkButtonProps = {
   external?: boolean;
 };
 function LinkButton({ children, href, external }: LinkButtonProps) {
+  const Element = external ? 'a' : LocaleLink;
   return (
     <Button variant='secondary' asChild>
-      <Link href={href} target={external ? '_blank' : undefined}>
+      <Element href={href} target={external ? '_blank' : undefined}>
         {children}
-      </Link>
+      </Element>
     </Button>
   );
 }

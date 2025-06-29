@@ -1,7 +1,6 @@
 'use client';
 
 import { Languages, Moon, Pin, Settings, Sun } from 'lucide-react';
-import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +10,7 @@ import { i18nConfig } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { capitalize } from '@/utils/strings';
 
+import { LocaleLink } from './LocaleLink';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -40,12 +40,12 @@ function LanguageLink({ locale }: { locale: string }) {
   const displayName = capitalize(languageDisplayNames.of(locale) || 'unknown');
 
   return (
-    <Link href={`/${locale}${pathname}`}>
+    <LocaleLink locale={locale} href={pathname}>
       <DropdownMenuItem className='cursor-pointer'>
         <Pin className={cn(!isCurrentLocale && 'opacity-0')} />
         {displayName}
       </DropdownMenuItem>
-    </Link>
+    </LocaleLink>
   );
 }
 

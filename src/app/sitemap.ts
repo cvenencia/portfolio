@@ -1,22 +1,23 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://cvenencia.com';
+import { BASE_URL } from '@/constants';
+import { i18nConfig } from '@/i18n';
+import { generateAlternateLanguages } from '@/utils/metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${BASE_URL}/en`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-      alternates: { languages: { es: `${BASE_URL}/es` } },
-    },
-    {
-      url: `${BASE_URL}/en/autogas-app`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-      alternates: { languages: { es: `${BASE_URL}/es/autogas-app` } },
-    },
-  ];
+  return generateEntries(['/', '/autogas-app']);
+}
+
+function generateEntries(pathnames: `/${string}`[]): MetadataRoute.Sitemap {
+  return pathnames
+    .map<MetadataRoute.Sitemap>(pathname =>
+      i18nConfig.locales.map(locale => ({
+        url: `${BASE_URL}/${locale}${pathname}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 1,
+        alternates: { languages: generateAlternateLanguages(pathname) },
+      }))
+    )
+    .flat();
 }
