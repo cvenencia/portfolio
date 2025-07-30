@@ -98,6 +98,11 @@ interface Resources {
         "title": "Autogas App",
         "description": "Data management and document generation web application for local vehicle workshop"
       },
+      "outreach-magic": {
+        "index-alt": "Outreach Magic logo",
+        "title": "Outreach Magic",
+        "description": "Freelance Backend developer. Built many APIs and automation tools, deployed using Google Cloud Platform"
+      },
       "todo": {
         "index-alt": "Screenshot of Todo App",
         "title": "Todo App",
@@ -147,9 +152,6 @@ interface Resources {
         "period": "Apr 2023",
         "image-alt": "Logo of Python Institute"
       }
-    },
-    "contact": {
-      "title": "Contact me"
     }
   }
 }

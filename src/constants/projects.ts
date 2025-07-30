@@ -44,6 +44,16 @@ export const PROJECTS: readonly Project[] = [
     detailsExternal: false,
   },
   {
+    lightImageUrl: '/images/projects/outreach-magic/logo-light.svg',
+    darkImageUrl: '/images/projects/outreach-magic/logo-dark.svg',
+    imageAltKey: 'projects.outreach-magic.index-alt',
+    titleKey: 'projects.outreach-magic.title',
+    descriptionKey: 'projects.outreach-magic.description',
+    tags: ['Python', 'Flask', 'Selenium', 'MongoDB', 'Google Cloud', 'Docker'],
+    detailsUrl: 'https://outreachmagic.io',
+    detailsExternal: true,
+  },
+  {
     category: 'Frontendmentor',
     lightImageUrl: '/images/projects/todo-app/index-light.png',
     darkImageUrl: '/images/projects/todo-app/index-dark.png',

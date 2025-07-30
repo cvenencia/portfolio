@@ -34,6 +34,11 @@
       "title": "Autogas App",
       "description": "Aplicación web para manejo de datos y generación de documentos para taller de vehículos local"
     },
+    "outreach-magic": {
+      "index-alt": "Logo de Outreach Magic",
+      "title": "Outreach Magic",
+      "description": "Desarrollador Backend freelance. Trabajé en varias APIs y herramientas de automatización, desplegadas en Google Cloud Platform"
+    },
     "todo": {
       "index-alt": "Pantallazo de Todo App",
       "title": "Todo App",
@@ -83,8 +88,5 @@
       "period": "Abr 2023",
       "image-alt": "Logo de Python Institute"
     }
-  },
-  "contact": {
-    "title": "Contáctame"
   }
 }
