@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 
 import FrontendMentor from '@/assets/social-icons/frontend-mentor.svg';
