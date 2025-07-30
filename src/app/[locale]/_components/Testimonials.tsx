@@ -12,10 +12,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Testimonial, TESTIMONIALS } from '@/constants/testimonials';
 import { cn } from '@/lib/utils';
 import { range } from '@/utils/numbers';
-
-import { Testimonial, TESTIMONIALS } from '../constants';
 
 export function Testimonials() {
   const { t } = useTranslation();

@@ -9,9 +9,8 @@ import { useTranslation } from 'react-i18next';
 import { LocaleLink } from '@/components/LocaleLink';
 import { SectionTitle } from '@/components/SectionTitle';
 import { Button } from '@/components/ui/button';
-
-import { type Project as _Project, PROJECTS } from '../constants';
-import { SkillTag } from './SkillTag';
+import { type Project as _Project, PROJECTS } from '@/constants/projects';
+import { SkillTag } from '@/features/skills';
 
 export function Projects() {
   const { t } = useTranslation();

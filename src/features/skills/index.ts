@@ -1,3 +1,4 @@
+export { SkillTag } from './components/SkillTag';
 export { iconForSkill } from './iconForSkill';
 
 export const SKILLS = [

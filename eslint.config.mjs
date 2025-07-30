@@ -26,6 +26,20 @@ const eslintConfig = [
     rules: {
       'simple-import-sort/imports': 'warn',
       'simple-import-sort/exports': 'warn',
+      'import/no-restricted-paths': [
+        'error',
+        {
+          basePath: './src',
+          zones: [
+            {
+              target: ['./!(features)/**/*', './!(features)*'],
+              from: ['./features/*/!(index.*)', './features/*/!(index.*)/**/*'],
+              message:
+                'Cannot import anything except the index file within a feature folder',
+            },
+          ],
+        },
+      ],
     },
   },
 ];

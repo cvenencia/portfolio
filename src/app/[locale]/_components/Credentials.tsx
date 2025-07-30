@@ -14,9 +14,11 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import {
+  Credential as _Credential,
+  CREDENTIALS,
+} from '@/constants/credentials';
 import { cn } from '@/lib/utils';
-
-import { Credential as _Credential, CREDENTIALS } from '../constants';
 
 export function Credentials() {
   const { t } = useTranslation();

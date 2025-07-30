@@ -1,6 +1,7 @@
-import { Skill } from '@/features/skills';
-import { iconForSkill } from '@/features/skills/iconForSkill';
 import { cn } from '@/lib/utils';
+
+import { Skill } from '..';
+import { iconForSkill } from '../iconForSkill';
 
 type TagProps = {
   skill: Skill;

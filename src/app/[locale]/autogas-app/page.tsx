@@ -9,6 +9,7 @@ import { generateMetadataAlternates } from '@/utils/metadata';
 import { Features } from './_components/Features';
 import { Hero } from './_components/Hero';
 import { Project } from './_components/Project';
+import { Technologies } from './_components/Technologies';
 
 export async function generateMetadata({
   params,
@@ -28,6 +29,7 @@ const LINKS: LinkData<'autogas'>[] = [
   { href: '#hero', translationKey: 'nav.hero' },
   { href: '#project', translationKey: 'nav.project' },
   { href: '#features', translationKey: 'nav.features' },
+  { href: '#technologies', translationKey: 'nav.technologies' },
 ];
 export default async function AutogasApp() {
   return (
@@ -37,6 +39,7 @@ export default async function AutogasApp() {
         <Hero />
         <Project />
         <Features />
+        <Technologies />
       </main>
       <Footer />
     </FadeInWrapper>

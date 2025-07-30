@@ -6,7 +6,8 @@
   "nav": {
     "hero": "Empresa",
     "project": "Proyecto",
-    "features": "Características"
+    "features": "Características",
+    "technologies": "Tecnologías"
   },
   "hero": {
     "description": "Centro de conversión de vehículos a Gas Natural Vehicular (GNV) ubicada en <1>Barranquilla, Colombia</1>",
@@ -58,5 +59,8 @@
       "event-alt": "Vista de un evento",
       "legend-alt": "Leyenda de colores"
     }
+  },
+  "technologies": {
+    "title": "Tecnologías"
   }
 }

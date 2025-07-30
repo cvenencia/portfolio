@@ -7,7 +7,8 @@ interface Resources {
     "nav": {
       "hero": "Company",
       "project": "Project",
-      "features": "Features"
+      "features": "Features",
+      "technologies": "Technologies"
     },
     "hero": {
       "description": "Vehicle conversion center to Compressed Natural Gas (CNG) located in <1>Barranquilla, Colombia</1>",
@@ -56,6 +57,9 @@ interface Resources {
         "event-alt": "Event view",
         "legend-alt": "Color legend"
       }
+    },
+    "technologies": {
+      "title": "Technologies"
     }
   },
   "root": {
