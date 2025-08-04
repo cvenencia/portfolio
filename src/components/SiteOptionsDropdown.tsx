@@ -40,7 +40,7 @@ function LanguageLink({ locale }: { locale: string }) {
   const displayName = capitalize(languageDisplayNames.of(locale) || 'unknown');
 
   return (
-    <LocaleLink locale={locale} href={pathname}>
+    <LocaleLink hard locale={locale} href={pathname}>
       <DropdownMenuItem className='cursor-pointer'>
         <Pin className={cn(!isCurrentLocale && 'opacity-0')} />
         {displayName}
