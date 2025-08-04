@@ -55,7 +55,12 @@ export default async function RootLayout(props: {
   }
 
   return (
-    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir(locale)}
+      suppressHydrationWarning
+      className='scroll-p-16'
+    >
       <body className={inter.className}>
         <TranslationsProvider namespaces='autogas'>
           <ThemeProvider attribute='class' disableTransitionOnChange>
