@@ -73,6 +73,7 @@ interface Resources {
     "switch-dark": "Switch to dark mode",
     "copy": "Copy",
     "copied": "Copied!",
+    "copied-full": "Copied to the clipboard!",
     "nav": {
       "homepage": "Homepage",
       "navigation": "Navigation",

@@ -5,8 +5,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
-import { Toaster } from 'sonner';
 
+import { Toaster } from '@/components/ui/sonner';
 import { inter } from '@/fonts';
 import { i18nConfig, initTranslations, TranslationsProvider } from '@/i18n';
 import { generateMetadataAlternates } from '@/utils/metadata';
@@ -66,7 +66,7 @@ export default async function RootLayout(props: {
             </div>
             <Toaster
               richColors
-              duration={15000}
+              duration={8000}
               closeButton
               position='bottom-center'
             />

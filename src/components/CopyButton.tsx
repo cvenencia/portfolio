@@ -3,6 +3,7 @@
 import { Copy } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 
 import { cn } from '@/lib/utils';
 
@@ -24,6 +25,7 @@ export function CopyButton({ copyValue, children, ...props }: CopyButtonProps) {
         const element = e.currentTarget;
         navigator.clipboard.writeText(copyValue);
         setCopied(true);
+        toast.success(t('copied-full'), { duration: 3000 });
         setTimeout(() => {
           setCopied(false);
           element.blur();
