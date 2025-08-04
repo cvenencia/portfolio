@@ -10,12 +10,7 @@ import { CopyEmailButton } from '@/components/CopyEmailButton';
 
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 type SocialLinkProps = {
   href: string;
@@ -24,23 +19,21 @@ type SocialLinkProps = {
 };
 function SocialLink({ href, label, children }: SocialLinkProps) {
   return (
-    <TooltipProvider delayDuration={0}>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            variant='outline'
-            size='sm'
-            asChild
-            className='rounded-full size-8'
-          >
-            <a href={href} target='_blank'>
-              {children}
-            </a>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>{label}</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Tooltip delayDuration={0}>
+      <TooltipTrigger asChild>
+        <Button
+          variant='outline'
+          size='sm'
+          asChild
+          className='rounded-full size-8'
+        >
+          <a href={href} target='_blank'>
+            {children}
+          </a>
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>{label}</TooltipContent>
+    </Tooltip>
   );
 }
 

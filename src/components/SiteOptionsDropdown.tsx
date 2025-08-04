@@ -3,9 +3,11 @@
 import { Languages, Moon, Pin, Settings, Sun } from 'lucide-react';
 import { useParams, usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useMounted } from '@/hooks/useMounted';
+import { useLocalStorage } from '@/hooks/useStorage';
 import { i18nConfig } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { capitalize } from '@/utils/strings';
@@ -21,12 +23,8 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './ui/tooltip';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 function LanguageLink({ locale }: { locale: string }) {
   const params = useParams<{ locale: string }>();
@@ -84,38 +82,55 @@ function ThemeButton() {
 export function SiteOptionsDropdown() {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const [hasSeenTooltip, setHasSeenTooltip] = useLocalStorage(
+    'has-seen-tooltip',
+    false
+  );
+  const [tooltipOpen, setTooltipOpen] = useState(false);
   const ThemeIcon = theme === 'light' ? Sun : Moon;
 
   const iconClasses = 'opacity-0 absolute group-hocus-visible:opacity-100';
+
+  useEffect(() => {
+    if (hasSeenTooltip) return setTooltipOpen(false);
+    else setTimeout(() => setTooltipOpen(true), 5000);
+  }, [hasSeenTooltip]);
+
   return (
-    <DropdownMenu>
-      <TooltipProvider>
-        <Tooltip>
+    <DropdownMenu onOpenChange={() => setHasSeenTooltip(true)}>
+      <Tooltip>
+        <HoverCard open={tooltipOpen}>
           <DropdownMenuTrigger asChild>
             <TooltipTrigger asChild>
-              <Button
-                variant='ghost'
-                className='relative group [&_svg]:transition-[opacity,transform] [&_svg]:duration-500'
-              >
-                <Settings className='group-hocus-visible:opacity-0' />
-                <Languages
-                  className={cn(
-                    iconClasses,
-                    'group-hocus-visible:translate-x-2 group-hocus-visible:translate-y-1 group-hocus-visible:rotate-12'
-                  )}
-                />
-                <ThemeIcon
-                  className={cn(
-                    iconClasses,
-                    'group-hocus-visible:-translate-x-2 group-hocus-visible:-translate-y-1 group-hocus-visible:rotate-12'
-                  )}
-                />
-              </Button>
+              <HoverCardTrigger asChild>
+                <Button
+                  variant='ghost'
+                  className='relative group [&_svg]:transition-[opacity,transform] [&_svg]:duration-500'
+                >
+                  <Settings className='group-hocus-visible:opacity-0' />
+                  <Languages
+                    className={cn(
+                      iconClasses,
+                      'group-hocus-visible:translate-x-2 group-hocus-visible:translate-y-1 group-hocus-visible:rotate-12'
+                    )}
+                  />
+                  <ThemeIcon
+                    className={cn(
+                      iconClasses,
+                      'group-hocus-visible:-translate-x-2 group-hocus-visible:-translate-y-1 group-hocus-visible:rotate-12'
+                    )}
+                  />
+                </Button>
+              </HoverCardTrigger>
             </TooltipTrigger>
           </DropdownMenuTrigger>
-          <TooltipContent>{t('options')}</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+          <HoverCardContent className='flex flex-col gap-2 items-center w-fit relative'>
+            <div className='absolute left-1/2 -translate-x-1/2 -top-2'>👆</div>
+            <div>{t('other-language')}</div>
+          </HoverCardContent>
+        </HoverCard>
+        <TooltipContent>{t('options')}</TooltipContent>
+      </Tooltip>
       <DropdownMenuContent>
         <ThemeButton />
         <LanguagesDropdown />

@@ -69,6 +69,7 @@ interface Resources {
     },
     "options": "Options",
     "change-language": "Change language",
+    "other-language": "¿Prefieres español?",
     "switch-light": "Switch to light mode",
     "switch-dark": "Switch to dark mode",
     "copy": "Copy",
