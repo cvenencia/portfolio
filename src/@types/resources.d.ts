@@ -134,6 +134,11 @@ interface Resources {
         "period": "Jan 2018 - Dec 2022",
         "image-alt": "Logo of Universidad del Norte"
       },
+      "ef-set": {
+        "title": "English C2 level",
+        "period": "Aug 2025",
+        "image-alt": "Logo of EF SET"
+      },
       "react-advanced": {
         "title": "React Advanced",
         "period": "Apr 2024",

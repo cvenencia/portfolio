@@ -25,6 +25,17 @@ export const CREDENTIALS: readonly Credential[] = [
     imageAltKey: 'credentials.university.image-alt',
   },
   {
+    categoryKey: 'credentials.type.certificate',
+    titleKey: 'credentials.ef-set.title',
+    description: 'EF SET',
+    location: 'EF (Education First)',
+    periodKey: 'credentials.ef-set.period',
+    imageUrl: '/images/credentials/ef.jpg',
+    imageAltKey: 'credentials.ef-set.image-alt',
+    detailsUrl:
+      'https://drive.google.com/file/d/1ku6kbqt1K-KddLrbzDlDT10NywjOv0Ef/view?usp=sharing',
+  },
+  {
     categoryKey: 'credentials.type.online-course',
     titleKey: 'credentials.react-advanced.title',
     description: 'React Simplified - Advanced',
